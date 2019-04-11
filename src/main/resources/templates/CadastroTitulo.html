@@ -10,16 +10,17 @@
 
 	<!-- Image and text -->
 	<nav class="navbar navbar-dark bg-dark">
+	 <div class="col-sm-12">
 	  <a class="navbar-brand" href="#">
-	    <img src="/img/Capturar.PNG" width="35" height="35" class="d-inline-block align-top" alt="">
+	    <img src="/img/download.jpg" width="35" height="35" class="d-inline-block align-top" alt="">
 	    Titulos
 	  </a>
+	  </div>
 	</nav>
 	
-	<form class="form-horizontal">
+	<form class="form-horizontal" method="POST" action="/titulos">
 		
-		<div class="container">
-  		<div class="panel-group">
+		
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 			<h1 class="panel-title">Novo titulo</h1>
@@ -27,18 +28,51 @@
 		 	<div class="panel-body">
 		  		<div class="form-group">
 		  			<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+		  			<div class="col-sm-8">
+		  				<input type="text" class="form-control" id="descricao" name="descricao"/>
+		  			</div>
+		  		</div>
+		  		<div class="form-group">
+		  			<label for="dtVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
 		  			<div class="col-sm-4">
-		  				<input type="text" class="form-control" id="descricao"/>
+		  				<input type="text" class="form-control" id="dtVencimento" name="dtVencimento"/>
+		  			</div>
+		  		</div>	
+		  		<div class="form-group">
+		  			<label for="valor" class="col-sm-2 control-label">Valor</label>
+		  			<div class="col-sm-4">
+		  				<input type="text" class="form-control" id="valor" name="valor"/>
+		  			</div>
+		  		</div>	
+		  		<div class="form-group" name="status">
+		  			<label for="status" class="col-sm-2 control-label">Status</label>
+		  			<div class="col-sm-3">
+		  				<select class="form-control">
+		  					<option value="PENDENTE">Pendente</option>
+		  					<option value="RECEBIDO">Recebido</option>
+		  				</select>
+		  			</div>
+		  		</div>
+		  		<div class="form-group">
+		  			<div class="col-sm-offset-2 col-sm-10">
+		  				<button type="submit" class="btn btn-primary">Salvar</button>
 		  			</div>
 		  		</div>		  
 		  	</div>
 		</div>
-		</div>
-		</div>
+		
 	</form>
+	
+
 
 
 
 <script src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
