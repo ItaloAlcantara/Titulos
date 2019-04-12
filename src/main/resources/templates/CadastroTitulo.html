@@ -9,15 +9,17 @@
 </head>
 <body>
 
-	<!-- Image and text -->
-	<nav class="navbar navbar-dark bg-dark">
-	 <div class="col-sm-12">
-	  <a class="navbar-brand" href="#">
+	
+	<nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#">
 	    <img src="/img/download.jpg" width="35" height="35" class="d-inline-block align-top" alt="">
-	    Titulos
-	  </a>
-	  </div>
-	</nav>
+	   		 Titulos
+	 		 </a>
+         </div>
+      </div>
+   </nav>
 	
 	<form class="form-horizontal" method="POST" action="/titulos">
 		<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
@@ -71,6 +73,7 @@
 
 
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/jQuery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
