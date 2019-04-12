@@ -28,13 +28,14 @@ public class TituloController {
 	public ModelAndView index() {
 		
 		ModelAndView modelAndView = new ModelAndView("CadastroTitulo");
-			
 		return modelAndView;
 	}
 	
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		ModelAndView modelAndView = new ModelAndView("PesquisaTitulos");
+		List<Titulo> titulos = (List<Titulo>) tituloRepository.findAll();
+		modelAndView.addObject("titulos",titulos);
 		return modelAndView;
 	}
 	

@@ -6,8 +6,8 @@ public enum TipoStatus {
 	
 	private final String descricao;
 	
-	TipoStatus(String status) {
-		this.descricao=status;
+	TipoStatus(String descricao) {
+		this.descricao=descricao;
 	}
 	
 	public String getTipo() {

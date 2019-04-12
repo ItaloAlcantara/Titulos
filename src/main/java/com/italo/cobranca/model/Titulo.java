@@ -15,6 +15,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 @Entity
 public class Titulo implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -25,10 +28,11 @@ public class Titulo implements Serializable{
 	
 	private String descricao;
 	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)	
 	private Date dtVencimento;
 	
-	
+	@NumberFormat(pattern="#,##0.00")
 	private BigDecimal valor;
 	
 	@NotNull(message="Nao pode ser nulo" )
@@ -87,6 +91,10 @@ public class Titulo implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+	
+	public boolean isPendente() {
+		return TipoStatus.PENDENTE.equals(this.status);
 	}
 
 	

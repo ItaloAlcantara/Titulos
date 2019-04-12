@@ -3,7 +3,7 @@
  xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
-<title>Cadastro de titulo</title>
+<title>Pesquisa de titulo</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
@@ -21,7 +21,10 @@
 
    <div class="panel panel-default">
    	<div class="panel-heading">
-      		<h1 class="panel-title">Pesquisa de títulos</h1>
+   		<div class="clearfix">
+      		<h1 class="panel-title aw-link-title">Pesquisa de títulos</h1>
+      		<a class="btn btn-link aw-link-panel" href="/titulos/novo" >Novo titulo</a>
+      	</div>
       	</div>
       	
       	<div class="panel-body">
@@ -38,12 +41,30 @@
       			</thead>
       			<tbody>
       				<tr>
-      					<td colspan="6">Nenhum título foi encontrado</td>
+      					<td colspan="6" th:if="${#lists.isEmpty(titulos)}">Nenhum título foi encontrado</td>
       				</tr>
+      				
+      				<tr th:each="titulo :${titulos}">
+      				<td class="text-center" th:text="${titulo.id}"></td>
+      				<td th:text="${titulo.descricao}"></td>
+      				<td class="text-center" th:text="${{titulo.dtVencimento}}"></td>
+      				<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
+      				<td class="text-center">
+      				<span class="label ."  th:text="${titulo.status}"
+      				th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
+      				</td>
+      				<td class="text-center" >
+      					1
+      				</td>
+      				</tr>
+      				
+      				
       			</tbody>
       		</table>
       	</div>
+
    </div>
+   
 <script src="/js/jQuery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
