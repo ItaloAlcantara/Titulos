@@ -3,6 +3,15 @@
 }
 
 .panel-default{
-	margin-left=15px;
-	margin-rigth=15px;
+	margin-left: 15px;
+	margin-rigth: 15px;
+}
+
+.alert {
+	margin-left: 15px;
+	margin-rigth: 15px;
+}
+
+.span {
+	font-size: 8px;
 }

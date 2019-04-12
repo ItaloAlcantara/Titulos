@@ -4,13 +4,13 @@ public enum TipoStatus {
 	PENDENTE("Pendente"),
 	RECEBIDO("Recebido");
 	
-	private final String tipo;
+	private final String status;
 	
-	TipoStatus(String tipo) {
-		this.tipo=tipo;
+	TipoStatus(String status) {
+		this.status=status;
 	}
 	
 	public String getTipo() {
-		return tipo;
+		return status;
 	}
 }

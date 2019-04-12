@@ -19,7 +19,9 @@
 	</nav>
 	
 	<form class="form-horizontal" method="POST" action="/titulos">
-		
+		<div class="alert alert-success">
+			<span>Titulo salvo com sucesso!</span>
+		</div>
 		
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -47,7 +49,7 @@
 		  		<div class="form-group" name="status">
 		  			<label for="status" class="col-sm-2 control-label">Status</label>
 		  			<div class="col-sm-3">
-		  				<select class="form-control">
+		  				<select class="form-control" name="status" id="status">
 		  					<option value="PENDENTE">Pendente</option>
 		  					<option value="RECEBIDO">Recebido</option>
 		  				</select>

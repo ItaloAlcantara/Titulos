@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Titulo implements Serializable{
@@ -30,6 +31,7 @@ public class Titulo implements Serializable{
 	
 	private BigDecimal valor;
 	
+	@NotNull(message="Nao pode ser nulo" )
 	@Enumerated (EnumType.STRING)
 	private TipoStatus status;
 	
