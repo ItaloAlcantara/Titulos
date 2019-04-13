@@ -13,7 +13,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
@@ -26,16 +30,22 @@ public class Titulo implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "Descrição obrigatoria!")
+	@Size(min= 5, max=60, message ="Descrição não pode conter mais de 60 caracteres ou menos de 5." )
 	private String descricao;
 	
+	@NotNull(message = "Data é obrigatoria.")
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)	
 	private Date dtVencimento;
 	
+	@NotNull(message="Campo é obrigatorio!")
+	@DecimalMin(value="0.01", message = "Valor deve ser maior que 1 centavo")
+@DecimalMax(value = "99999999999.99", message = "Valor não pode ser maior que 9.999.999.999.999")
 	@NumberFormat(pattern="#,##0.00")
 	private BigDecimal valor;
 	
-	@NotNull(message="Nao pode ser nulo" )
+	
 	@Enumerated (EnumType.STRING)
 	private TipoStatus status;
 	
