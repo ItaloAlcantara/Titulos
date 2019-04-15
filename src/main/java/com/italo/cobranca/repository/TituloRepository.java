@@ -10,4 +10,6 @@ import com.italo.cobranca.model.Titulo;
 @Transactional
 public interface TituloRepository extends CrudRepository<Titulo, Long>{
 
+	
+
 }
